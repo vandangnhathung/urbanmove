@@ -1,0 +1,99 @@
+html {
+}
+
+body {
+    font-family:"epilogue", sans-serif;
+    height:300vh;
+}
+:root {
+    --um-primary-color:#fdc609;
+}
+/****************
+     Header
+***************/
+.um-header {
+    width:100%; min-height:40px;
+    padding-top:20px; padding-bottom:20px;
+}
+
+
+/****************
+     Banner
+***************/
+.um-banner {}
+
+.um-banner-top:before {
+    content:"";
+    position:absolute; top:0;left:0;bottom:0;right:0;
+    background:linear-gradient(0deg, rgba(1, 1, 1, 0.6), rgba(255, 255, 255, 0));
+}
+
+.um-banner .um-img-wrapper {
+    aspect-ratio:1440/765;
+}
+
+.um-banner .um-img-wrapper img {
+}
+
+.um-banner-bottom {text-align:center;}
+
+.um-banner-content {
+    max-width:387px;
+}
+
+.um-banner-word {margin-bottom:20px;}
+
+
+/****************
+     Main
+***************/
+.um-main {background:#000; contain:paint;}
+
+.um-main-content {
+    padding-bottom:20%;
+    padding-top:16.3%;
+    position:sticky;
+    top:1px;
+}
+
+.um-main-title {
+    max-width:472px; color:var(--um-primary-color);
+    font-size:45px;
+    text-align:center;
+
+}
+
+.um-parallax {
+    width:275px; aspect-ratio:275/434;
+    position:absolute;
+    transition:all 0.5s linear;
+    transform:translateY(0);
+}
+
+.um-parallax:nth-child(1) {;
+    top:25%;
+    left:10%;
+}
+
+.um-parallax:nth-child(2) {
+    top:20%;
+    left:70%;
+}
+
+.um-parallax:nth-child(3) {
+    top:50%;
+    left:40%;
+}
+
+/****************
+     Style
+***************/
+.btn {
+    display:inline-block;
+    border:1px var(--um-primary-color) solid;
+    color:var(--um-primary-color); font-weight:700;
+    padding:8px 20px;
+    margin-bottom:25px;
+}
+
+p {font-size:16px; margin-bottom:30px; font-weight:700; text-transform:uppercase; color:var(--um-primary-color);}
