@@ -22,6 +22,8 @@ document.querySelectorAll(".um-parallax").forEach((el, i) => {
     })
 })
 
+
+// Slide section
 document.querySelectorAll(".um-slide-img-wrapper").forEach((el, i) => {
     const slideSection = document.querySelector(".um-main-slide-wrapper");
     const isOdd = i % 2 === 0;
