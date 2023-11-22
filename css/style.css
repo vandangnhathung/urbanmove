@@ -3,7 +3,7 @@ html {
 
 body {
     font-family:"epilogue", sans-serif;
-    height:300vh;
+    height:1000vh;
 }
 :root {
     --um-primary-color:#fdc609;
@@ -47,28 +47,32 @@ body {
 /****************
      Main
 ***************/
-.um-main {background:#000; contain:paint;}
+.um-main {height:150vh; background:#000;}
+.um-main-parallax {contain:paint;}
 
 .um-main-content {
     padding-bottom:20%;
     padding-top:16.3%;
     position:sticky;
     top:1px;
+    mix-blend-mode:difference;
 }
 
 .um-main-title {
     max-width:472px; color:var(--um-primary-color);
     font-size:45px;
     text-align:center;
-
 }
 
 .um-parallax {
+    --size:275px;
     width:275px; aspect-ratio:275/434;
     position:absolute;
     transition:all 0.5s linear;
     transform:translateY(0);
+    background:#fff;
 }
+
 
 .um-parallax:nth-child(1) {;
     top:25%;
@@ -81,10 +85,55 @@ body {
 }
 
 .um-parallax:nth-child(3) {
-    top:50%;
+    top:30%;
     left:40%;
 }
 
+
+.um-parallax:nth-child(4) {
+    top:80%;
+    left:32%;
+}
+
+
+.um-parallax:nth-child(5) {
+    top:65%;
+    left:70%;
+}
+
+
+.um-parallax:nth-child(6) {
+    top:80%;
+    left:90%;
+}
+
+
+/****************
+     Slide
+***************/
+.um-main-slide-wrapper {
+    height:300vh;
+}
+
+.um-main-slide {
+    position:sticky;
+    top:1px;
+    background:#000;
+    contain:paint;
+}
+.um-slide-img-wrapper {position:relative; transition:all .3s ease-in-out; transform:translate(0); display:flex;}
+
+.um-slide-img-wrapper:nth-child(2) {transform:translateX(-100%);}
+
+/*.um-slide-row {display:flex;}*/
+
+.um-slide {min-width:33.3%;aspect-ratio:474/382;}
+
+.footer {
+    padding-bottom:400px;
+
+}
+.um-test {height:300vh; background:#fdc609}
 /****************
      Style
 ***************/
