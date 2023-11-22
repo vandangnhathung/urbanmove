@@ -23,9 +23,8 @@ document.querySelectorAll(".um-parallax").forEach((el, i) => {
 })
 
 document.querySelectorAll(".um-slide-img-wrapper").forEach((el, i) => {
-    const umMainSlide = document.querySelector(".um-main-slide-wrapper");
+    const slideSection = document.querySelector(".um-main-slide-wrapper");
     const isOdd = i % 2 === 0;
-    const umSlide = document.querySelector(".um-main-slide");
 
     window.addEventListener("scroll", () => {
         // calculate scrolling x axios area
@@ -34,41 +33,24 @@ document.querySelectorAll(".um-slide-img-wrapper").forEach((el, i) => {
         const hiddenArea = el.scrollWidth - window.innerWidth;
 
         // min-max scrolling y axios distance
-        const minYDistance = umMainSlide.getBoundingClientRect().top + window.scrollY;
-        const maxYDistance = umMainSlide.getBoundingClientRect().bottom + window.scrollY;
+        const minYDistance = slideSection.getBoundingClientRect().top + window.scrollY;
+        // const maxYDistance = umMainSlide.getBoundingClientRect().bottom + window.scrollY;
         // const activeArea = maxYDistance - minYDistance;
-
-        // console.log("maxYDistance: ", maxYDistance, "minYDistance: ", minYDistance, "window.scrollY: ", window.scrollY);
-
-        // console.log("umMainSlide.getBoundingClientRect().top: ", umMainSlide.getBoundingClientRect().top)
-
-        // console.log("window.scrollY: ", window.scrollY, "minYDistance: ", minYDistance)
 
         // normalize method -> convert custom value to [0,1]
         const scrollingActiveArea = window.scrollY - minYDistance;
         const convertValue = (scrollingActiveArea / hiddenArea); // [0,1]
 
-
-        // execute the animation
-        if(scrollingActiveArea >= 0 && scrollingActiveArea <= umMainSlide.offsetHeight && convertValue <= 1){
+        // area is active => scroll into area | area is deactivated => leave off area
+        if(scrollingActiveArea >= 0 && scrollingActiveArea <= slideSection.offsetHeight && convertValue <= 1){
             const realValue = Math.floor(convertValue * 100);
-            // console.log(realValue)
+
             if(isOdd){
                 el.style.transform = `translateX(${-realValue}%)`;
             }else{
                 el.style.transform = `translateX(${-100 + realValue}%)`;
             }
         }
-
-
-        // const rectSlideTop = umMainSlide.getBoundingClientRect().top;
-        //
-        // if(rectSlideTop >= 0){
-        //     return;
-        // }
-        //
-        //
-
     })
 
 
